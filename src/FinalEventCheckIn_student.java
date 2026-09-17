@@ -75,11 +75,15 @@ public class FinalEventCheckIn_student {
                     // TODO 5. null을 건너뛰며 위치, 학번, 이름을 출력하세요.
                     // 아무도 없으면 "등록된 신청자가 없습니다."를 출력하세요.
                     int displayed = 0;
+                    int indexing = 0;
                     for(int i = 0; i<entries.length; i++){
                         if(entries[i]!=null){
-                            System.out.println("위치 : " + (displayed+1) + " 학번 : " + entries[i].studentId + " 이름 : " + entries[i].name);
+                            System.out.println("위치 : " + (indexing+1) + " 학번 : " + entries[i].studentId + " 이름 : " + entries[i].name);
                             // displayed로 표현했습니다.
                             displayed++;
+                        }else{
+                            System.out.println((indexing+1) + "번은 빈자리입니다.");
+                            indexing++;
                         }
                     }
 
@@ -113,13 +117,15 @@ public class FinalEventCheckIn_student {
                 case "4":
                     // TODO 7. null이 아닌 칸을 세어 현재 인원과 남은 자리를 출력하세요.
                     int count = 0;
+                    indexing = 0; // 0으로초기화
                     for(int i = 0; i<entries.length; i++){
                         if(entries[i]!=null){//테스트순서 5번항목에서 빈자리가 확인되는가의 뜻이 빈자의 위치를 물어보시는것같아서 이렇게 표현했습니다.
-                            System.out.println("인덱스 " + (count+1) + " 학번 : " + entries[i].studentId + " 이름 : " + entries[i].name);
+                            System.out.println("위치 : " + (indexing+1) + " 학번 : " + entries[i].studentId + " 이름 : " + entries[i].name);
+                            indexing++;
                             count++;
                         }else{
-                            System.out.println((count+1) + "번은 빈자리입니다.");
-                            count++;
+                            System.out.println((indexing+1) + "번은 빈자리입니다.");
+                            indexing++;
                         }
                     }
                     System.out.println("신청 인원:"+count+"명");
