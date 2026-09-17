@@ -76,7 +76,7 @@ public class FinalEventCheckIn_student {
                     // 아무도 없으면 "등록된 신청자가 없습니다."를 출력하세요.
                     int displayed = 0;
                     int indexing = 0;
-                    for(int i = 0; i<entries.length; i++){
+                    for(int i = 0; i<entries.length; i++){ // 빈자리 확인해줘야하나 싶어서 이렇게 표현했습니다
                         if(entries[i]!=null){
                             System.out.println("위치 : " + (indexing+1) + " 학번 : " + entries[i].studentId + " 이름 : " + entries[i].name);
                             // displayed로 표현했습니다.
